@@ -8,7 +8,7 @@ for ITERATING through SEQUENCES, including:
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
          their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -74,8 +74,12 @@ def sum_radii(circles):
     Type hints:
       :type circles:  list[rg.Circle]    or tuple(rg.Circle)
     """
+    total = 0
+    for circle in circles:
+        total += circle.radius
+    return total
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -148,8 +152,14 @@ def count_last_n_odds(integers, n):
       :type integers: list[int]   or tuple[int]
       :type n:        int
     """
+    count = 0
+    for i in range(n):
+        if integers[len(integers) - n + i] % 2 == 1:
+            count += 1
+    return count
+
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -222,8 +232,12 @@ def index_of_first_negative(numbers):
     Type hints:
       :type numbers: list[float]   or tuple[float]
     """
+    for i in range(len(numbers)):
+        if numbers[i] < 0:
+            return i
+    return int(-1)
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -279,8 +293,12 @@ def contains_an_a(s):
     Type hints:
       :type s: str
     """
+    for letter in s:
+        if letter == "a":
+            return True
+    return False
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
