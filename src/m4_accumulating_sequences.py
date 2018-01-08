@@ -397,11 +397,14 @@ def rectangles_from_circles(circles):
       :type circles:  list of rg.Circle or tuple of rg.Circle
       :rtype: list of rg.Rectangles
     """
+    list = []
     for circle in circles:
         c1 = rg.Point(circle.center.x - circle.radius, circle.center.y - circle.radius)
         c2 = rg.Point(circle.center.x + circle.radius, circle.center.y + circle.radius)
+        list += [rg.Rectangle(c1, c2)]
+    return list
     # ------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
